@@ -2,7 +2,7 @@
 {
     "name": "WhatsApp Web",
     "summary": """
-        Send WhatsApp Web messages from Sales Orders, Invoices, and Purchase Orders""",
+        Send WhatsApp Web messages from Sales Orders, Invoices, Purchase Orders, and Contacts""",
     "author": "Be OnlyOne",
     "maintainers": ["onlyone-soft"],
     "website": "https://onlyone.odoo.com/",
@@ -19,5 +19,6 @@
         "views/buttons_sale_order_views.xml",
         "views/buttons_account_move_views.xml",
         "views/buttons_purchase_order_views.xml",
+        "views/buttons_res_partner_views.xml",
     ],
 }
