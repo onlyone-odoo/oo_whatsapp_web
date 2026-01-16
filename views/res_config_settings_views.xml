@@ -4,60 +4,27 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//sheet" position="inside">
-                <div class="app_settings_block" data-string="WhatsApp" data-key="oo_whatsapp_web">
-                    <h2>WhatsApp</h2>
-                    <div class="row mt16 o_settings_container">
-                        <div class="col-12 col-lg-6 o_setting_box">
-                            <div class="o_setting_left_pane"/>
-                            <div class="o_setting_right_pane">
-                                <span class="o_setting_name">Mensaje para Pedidos de Venta</span>
-                                <div class="text-muted mt8">
-                                    Configure el mensaje que se enviará por WhatsApp Web desde pedidos de venta.
-                                </div>
-                                <div class="content-group mt8">
-                                    <label for="sale_message"/>
-                                    <field name="sale_message" widget="text" placeholder="Ej: Buen día, #CLIENTE su pedido #ORDEN está listo. Total #MONTO"/>
-                                </div>
-                                <div class="text-muted mt8">
-                                    Placeholders: #CLIENTE, #ORDEN, #MONTO, #NUMERO
-                                </div>
-                            </div>
+            <xpath expr="//app[@name='general_settings']" position="inside">
+                <block title="WhatsApp" name="whatsapp_setting_container">
+                    <setting id="sale_message_setting" string="Mensaje para Pedidos de Venta" help="Configure el mensaje que se enviará por WhatsApp Web desde pedidos de venta">
+                        <field name="sale_message" widget="text" placeholder="Ej: Buen día, #CLIENTE su pedido #ORDEN está listo. Total #MONTO"/>
+                        <div class="text-muted mt8">
+                            Placeholders: #CLIENTE, #ORDEN, #MONTO, #NUMERO
                         </div>
-                        <div class="col-12 col-lg-6 o_setting_box">
-                            <div class="o_setting_left_pane"/>
-                            <div class="o_setting_right_pane">
-                                <span class="o_setting_name">Mensaje para Facturas</span>
-                                <div class="text-muted mt8">
-                                    Configure el mensaje que se enviará por WhatsApp Web desde facturas.
-                                </div>
-                                <div class="content-group mt8">
-                                    <label for="invoice_message"/>
-                                    <field name="invoice_message" widget="text" placeholder="Ej: Buen día, #CLIENTE su factura #FACTURA está disponible. Total #MONTO"/>
-                                </div>
-                                <div class="text-muted mt8">
-                                    Placeholders: #CLIENTE, #FACTURA, #MONTO, #NUMERO
-                                </div>
-                            </div>
+                    </setting>
+                    <setting id="invoice_message_setting" string="Mensaje para Facturas" help="Configure el mensaje que se enviará por WhatsApp Web desde facturas">
+                        <field name="invoice_message" widget="text" placeholder="Ej: Buen día, #CLIENTE su factura #FACTURA está disponible. Total #MONTO"/>
+                        <div class="text-muted mt8">
+                            Placeholders: #CLIENTE, #FACTURA, #MONTO, #NUMERO
                         </div>
-                        <div class="col-12 col-lg-6 o_setting_box">
-                            <div class="o_setting_left_pane"/>
-                            <div class="o_setting_right_pane">
-                                <span class="o_setting_name">Mensaje para Órdenes de Compra</span>
-                                <div class="text-muted mt8">
-                                    Configure el mensaje que se enviará por WhatsApp Web desde órdenes de compra.
-                                </div>
-                                <div class="content-group mt8">
-                                    <label for="purchase_message"/>
-                                    <field name="purchase_message" widget="text" placeholder="Ej: Buen día, #PROVEEDOR nos comunicamos por este pedido"/>
-                                </div>
-                                <div class="text-muted mt8">
-                                    Placeholders: #PROVEEDOR, #NUMERO
-                                </div>
-                            </div>
+                    </setting>
+                    <setting id="purchase_message_setting" string="Mensaje para Órdenes de Compra" help="Configure el mensaje que se enviará por WhatsApp Web desde órdenes de compra">
+                        <field name="purchase_message" widget="text" placeholder="Ej: Buen día, #PROVEEDOR nos comunicamos por este pedido"/>
+                        <div class="text-muted mt8">
+                            Placeholders: #PROVEEDOR, #NUMERO
                         </div>
-                    </div>
-                </div>
+                    </setting>
+                </block>
             </xpath>
         </field>
     </record>
